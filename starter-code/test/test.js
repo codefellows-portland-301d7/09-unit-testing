@@ -22,4 +22,4 @@ QUnit.module('Article Class', function() {
   });
   //STRETCH: write a test for Article.numWordsAll
   //STRETCH: write a test for Article.fetchAll
-})
+});
