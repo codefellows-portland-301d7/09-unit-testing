@@ -19,7 +19,7 @@ QUnit.module('Article Constructor', function() {
     var testMethod = testArticle.toHtml;
 
     assert.notEqual(testMethod, 'undefined');
-    //TODO: verify that an instance of article has a toHtml method
+    //TODO: Done. verify that an instance of article has a toHtml method
     //pseudo-article prints toHtml method when called
     //how do you check if the article object has a certain property? check that article.toHtml is not undefined
     //notEqual(article.toHTML, undefined)
@@ -29,6 +29,8 @@ QUnit.module('Article Constructor', function() {
 QUnit.module('Article Class', function() {
   QUnit.test('Article.allArticles should be an array', function(assert) {
     //TODO: write a test for the all articles property
+    // typeOf Article.allArticles = []
+    assert.ok(Array.isArray(Article.allArticles));
   });
   QUnit.test('Article.loadAll should set an array of Article instances', function(assert) {
     //TODO: write a test for article loadAll
