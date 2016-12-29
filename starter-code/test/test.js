@@ -1,5 +1,12 @@
 QUnit.module('Article Constructor', function() {
   QUnit.test('Article should create a new Arcticle', function(assert) {
+    obj = {
+      title: 'train days'
+    };
+
+    var testArticle = new Article(obj);
+
+    assert.equal(testArticle.title, 'train days');
     //TODO: write a test for the Article constructor
   });
 
