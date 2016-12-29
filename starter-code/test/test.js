@@ -2,32 +2,26 @@ QUnit.module('Article Constructor', function() {
   QUnit.test('Article should create a new Arcticle', function(assert) {
     //TODO: write a test for the Article constructor
     var testObject = {
-    //  authorUrl, category, publishedOn, body;
       id: 0,
       title: 'testTitle',
       author: 'testAuthor'};
-    // authorUrl = 'http:\\testUrl.com';
-    // category = 'testCategory';
-    // publishedOn = '2016-12-28';
-    // body= '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
 
     var result = new Article(testObject);
-      //  authorUrl, category, publishedOn, body);
-    console.log(result);
 
     assert.propEqual(result, testObject);
-      // id: '0',
-      // title: 'testTitle',
-      // author: 'testAuthor',
-      // authorUrl: 'http:\\testUrl.com',
-      // category: 'testCategory',
-      // publishedOn: '2016-12-28',
-      // body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
-    // });
   });
 
   QUnit.test('Article instance should have a method toHtml', function(assert) {
     //TODO: verify that an instance of article has a toHtml method
+    var testObject = {
+      id: 0,
+      title: 'testTitle',
+      author: 'testAuthor'};
+
+    var result = new Article(testObject);
+
+
+    assert.ok(result.toHtml);
   });
 });
 
