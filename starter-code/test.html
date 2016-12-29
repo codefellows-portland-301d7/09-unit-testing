@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Blog</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.0.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="vendor/styles/normalize.css">
     <link rel="stylesheet" href="styles/icons.css">
@@ -15,6 +16,8 @@
   <body>
     <!--TODO: add the appropriate tags (link, script, div)to run QUnit and your tests-->
     <!-- Vendor Files -->
+    <div id="qunit"><div>
+    <script type="text/javascript" src="https://code.jquery.com/qunit/qunit-2.1.0.js"></script>
     <script src="vendor/scripts/jquery-2.1.4.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/marked.js"></script>
@@ -24,5 +27,6 @@
     <script src="scripts/models/article.js"></script>
     <!-- View Files -->
     <script src="scripts/views/articleView.js"></script>
+    <script type="text/javascript" src="test/test.js"></script>
   </body>
 </html>
