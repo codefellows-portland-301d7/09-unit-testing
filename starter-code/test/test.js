@@ -35,7 +35,7 @@ QUnit.module('Article Class', function() {
     assert.ok(Array.isArray(Article.allArticles));
   });
   QUnit.test('Article.loadAll should set an array of Article instances to Article.allArticles', function(assert) {
-    //TODO: write a test for article loadAll
+    //TODO done: write a test for article loadAll
     //remember to reset anything that changed about your global
     //environment at the end of the test!
     var testArrOfObj = [{title: 'title1'}, {title: 'title2'}, {title: 'title3'}];
@@ -44,8 +44,19 @@ QUnit.module('Article Class', function() {
     assert.equal(Article.allArticles[0].title, 'title1');
   });
   QUnit.test('Article.allAuthors should get a unique name of authors', function(assert) {
-    //TODO: write a test for Article.allAuthors
+    //TODO done: write a test for Article.allAuthors
+
+    var nameList = [{author: 'joe'}, {author: 'jane'}, {author: 'joe'}];
+    var loadArticleArticles = Article.loadAll(nameList);
+
+    var authorLoad = Article.allAuthors();
+    QUnit.log(function(){
+      console.log('authorLoad: ', authorLoad);
+    });
+
+    assert.equal(authorLoad.length, 2);
+    assert.equal(authorLoad[0], 'joe');
   });
   //STRETCH: write a test for Article.numWordsAll
   //STRETCH: write a test for Article.fetchAll
-})
+});
