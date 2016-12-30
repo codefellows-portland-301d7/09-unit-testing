@@ -87,5 +87,17 @@ QUnit.module('Article Class', function() {
     Article.allArticles = [];
   });
   //STRETCH: write a test for Article.numWordsAll
+  QUnit.test('Article.numWordsAll should return the total number of words in all of the blog entires', function(assert) {
+    Article.allArticles = [
+      {body: 'Ha! Ha! Ha! You can\'t catch me!'}, //7
+      {body: 'I run it up the flagpole and see who still looks but no one ever does'}, //16
+      {body: 'I\'m not sick but I\'m not well. And it\'s a sin to live so well.'} //15
+    ];
+    console.log(Article.allArticles);
+    assert.equal(Article.numWordsAll(), 42);
+
+
+    Article.allArticles = [];
+  });
   //STRETCH: write a test for Article.fetchAll
 });
