@@ -32,14 +32,43 @@ QUnit.module('Article Constructor', function() {
 QUnit.module('Article Class', function() {
   QUnit.test('Article.allArticles should be an array', function(assert) {
     //TODO: write a test for the all articles property
+
+
+    var result =false;
+
+    if(Article.allArticles){
+      result = true;
+    }
+
+    assert.equal(result, true);
+
   });
   QUnit.test('Article.loadAll should set an array of Article instances', function(assert) {
     //TODO: write a test for article loadAll
     //remember to reset anything that changed about your global
     //environment at the end of the test!
+    var testArr = ['one']; //test array for allArticles argument
+    Article.loadAll(testArr); //should populate allArticles within the Array it takes as an argument
+    var result = Article.allArticles.length; // should populate allArticles with test Arr ( ['one']) ie. length=0
+  //  console.log('with test ' + Article.allArticles);
+    assert.equal(result, 1);
+    Article.loadAll([]); //reset
+  //  console.log('sans test ' + Article.allArticles); //check reset;
+
   });
   QUnit.test('Article.allAuthors should get a unique name of authors', function(assert) {
     //TODO: write a test for Article.allAuthors
+
+    Article.allArticles = [{
+      author: 'Brigitte'}, { author: 'Brigitte'}, { author: 'Will'}, {author: 'Will'}];
+
+    var result = Article.allAuthors();
+    var expected = 2;
+    //console.log(result);
+    assert.equal(result.length, expected);
+    Article.allArticles = []; // reset global state
+
+
   });
   //STRETCH: write a test for Article.numWordsAll
   //STRETCH: write a test for Article.fetchAll
