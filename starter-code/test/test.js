@@ -1,6 +1,8 @@
+'use strict';
+
 QUnit.module('Article Constructor', function() {
   QUnit.test('Article should create a new Arcticle', function(assert) {
-    obj = {
+    var obj = {
       title: 'train days'
     };
 
@@ -11,7 +13,7 @@ QUnit.module('Article Constructor', function() {
   });
 
   QUnit.test('Article instance should have a method toHtml', function(assert) {
-    obj = {
+    var obj = {
       title: 'train days'
     };
 
@@ -28,14 +30,18 @@ QUnit.module('Article Constructor', function() {
 
 QUnit.module('Article Class', function() {
   QUnit.test('Article.allArticles should be an array', function(assert) {
-    //TODO: write a test for the all articles property
+    //TODO done: write a test for the all articles property
     // typeOf Article.allArticles = []
     assert.ok(Array.isArray(Article.allArticles));
   });
-  QUnit.test('Article.loadAll should set an array of Article instances', function(assert) {
+  QUnit.test('Article.loadAll should set an array of Article instances to Article.allArticles', function(assert) {
     //TODO: write a test for article loadAll
     //remember to reset anything that changed about your global
     //environment at the end of the test!
+    var testArrOfObj = [{title: 'title1'}, {title: 'title2'}, {title: 'title3'}];
+    var testLoadAll = Article.loadAll(testArrOfObj);
+
+    assert.equal(Article.allArticles[0].title, 'title1');
   });
   QUnit.test('Article.allAuthors should get a unique name of authors', function(assert) {
     //TODO: write a test for Article.allAuthors
