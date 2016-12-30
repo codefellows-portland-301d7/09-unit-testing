@@ -3,6 +3,7 @@
     Object.keys(opts).forEach(function(element) {
       this[element] = opts[element];
     }, this);
+
   }
 
   Article.allArticles = [];
