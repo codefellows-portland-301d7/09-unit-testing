@@ -72,6 +72,19 @@ QUnit.module('Article Class', function() {
   });
   QUnit.test('Article.allAuthors should get a unique name of authors', function(assert) {
     //TODO: write a test for Article.allAuthors
+    Article.allArticles = [
+      {author: 'Toto'},
+      {author: 'Dolore'},
+      {author: 'Dorthy'},
+      {author: 'Santa'},
+      {author: 'Toto'},
+      {author: 'Dolore'},
+      {author: 'Claus'}
+    ];
+
+    assert.equal(Article.allAuthors().length, 5);
+
+    Article.allArticles = [];
   });
   //STRETCH: write a test for Article.numWordsAll
   //STRETCH: write a test for Article.fetchAll
