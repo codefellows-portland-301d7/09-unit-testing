@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.0.css">
+
     <!-- Code Fellows favicon -->
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
   </head>
   <body>
-    <!--TODO: add the appropriate tags (link, script, div)to run QUnit and your tests-->
+    <!--TODO: DONE// add the appropriate tags (link, script, div)to run QUnit and your tests-->
+    <div id="qunit"></div>
+
+    <script src="https://code.jquery.com/qunit/qunit-2.1.0.js"></script>
+
     <!-- Vendor Files -->
     <script src="vendor/scripts/jquery-2.1.4.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
@@ -24,5 +30,7 @@
     <script src="scripts/models/article.js"></script>
     <!-- View Files -->
     <script src="scripts/views/articleView.js"></script>
+    <!-- Test File -->
+    <script src="test/test.js"></script>
   </body>
 </html>
