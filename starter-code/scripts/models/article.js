@@ -80,6 +80,7 @@
     webDB.execute('SELECT * FROM articles ORDER BY publishedOn DESC', function(rows) {
       if (rows.length) {
         Article.loadAll(rows);
+        console.log('rows: ', rows);
         next();
       } else {
         $.getJSON('/data/hackerIpsum.json', function(rawData) {
@@ -88,6 +89,7 @@
             article.insertRecord();
           });
           webDB.execute('SELECT * FROM articles ORDER BY publishedOn DESC', function(rows) {
+            console.log('rows: ', rows);
             Article.loadAll(rows);
             next();
           });
