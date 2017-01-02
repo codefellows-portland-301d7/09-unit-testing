@@ -9,6 +9,7 @@ QUnit.module('Article Constructor', function() {
     var testArticle = new Article(obj);
 
     assert.equal(testArticle.title, 'train days');
+    assert.ok(testArticle instanceof Article);
     //TODO: DONNNNNE write a test for the Article constructor
   });
 
@@ -21,6 +22,7 @@ QUnit.module('Article Constructor', function() {
     var testMethod = testArticle.toHtml;
 
     assert.notEqual(testMethod, 'undefined');
+    assert.equal(typeof testMethod, 'function');
     //TODO: Done. verify that an instance of article has a toHtml method
     //pseudo-article prints toHtml method when called
     //how do you check if the article object has a certain property? check that article.toHtml is not undefined
@@ -42,12 +44,14 @@ QUnit.module('Article Class', function() {
     var testLoadAll = Article.loadAll(testArrOfObj);
 
     assert.equal(Article.allArticles[0].title, 'title1');
+    Article.allArticles = []; // reset anything that changed about the global environment
   });
   QUnit.test('Article.allAuthors should get a unique name of authors', function(assert) {
     //TODO done: write a test for Article.allAuthors
 
     var nameList = [{author: 'joe'}, {author: 'jane'}, {author: 'joe'}];
     var loadArticleArticles = Article.loadAll(nameList);
+    //Article.allArticles = nameList; // pairs it down to the bare minimum. No need to associate other object prototypes because we're only looking for author properties
 
     var authorLoad = Article.allAuthors();
     QUnit.log(function(){
@@ -56,6 +60,7 @@ QUnit.module('Article Class', function() {
 
     assert.equal(authorLoad.length, 2);
     assert.equal(authorLoad[0], 'joe');
+    //Article.allArticles = [];
   });
   //STRETCH: write a test for Article.numWordsAll
   //STRETCH: write a test for Article.fetchAll
